@@ -1,0 +1,21 @@
+digraph {
+	rankdir=TB size=10
+	A [label="Load Kidney Dataset"]
+	B [label="Preprocess Images"]
+	C [label="Create DataLoaders"]
+	D [label="Initialize Generator & Discriminator"]
+	E [label="Training Loop (1000 epochs)"]
+	F [label="Train Discriminator"]
+	G [label="Train Generator"]
+	H [label="Save Generated Images"]
+	I [label="Save Final Model"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F [label="For each batch"]
+	F -> G [label="After Critic Updates"]
+	G -> H [label="Every epoch"]
+	H -> E [label="Repeat until 1000 epochs"]
+	E -> I [label="End of Training"]
+}
